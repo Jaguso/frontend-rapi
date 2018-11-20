@@ -5,6 +5,7 @@ import {BrowserRouter as Router,
 
 import Navbar from './Components/Navbar/Navbar';
 import Signup from './Components/Signup/Signup';
+import Login from './Components/Login/Login';
 
 
 class Routes extends Component{
@@ -17,6 +18,7 @@ class Routes extends Component{
         <div className="container text-center">
           <Route exact path="/" component={Signup} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
         </div>
         </main>
       </Router>
