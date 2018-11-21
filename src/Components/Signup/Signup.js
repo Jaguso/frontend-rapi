@@ -32,6 +32,7 @@ class Signup extends Component{
       let response = {}
       response = await createUser(this.state).catch(({response}) => alert(response.data.error.errors[0].message))
       console.log(response)
+      this.props.history.push('/')
     }else{
       alert("Los passwords no coinciden")
     }
