@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-
 import Firebase from '../../Firebase';
 import FileUploader from 'react-firebase-file-uploader';
 import { createRestaurant } from '../../services';
+
+import FormAddress from './FormAddress';
 
 
 class FormRestaurant extends Component {
@@ -47,7 +48,8 @@ class FormRestaurant extends Component {
     e.preventDefault();
 
     let data = {
-      ...this.state
+      ...this.state,
+      address: {...this.refs.address.getState()}
     }
     
     console.log(data)
@@ -116,6 +118,8 @@ class FormRestaurant extends Component {
               </label>
 
             </div>
+            <h3>Add your restaurant's address</h3>
+            <FormAddress ref="address"/>
             <button type="submit" className="btn btn-success">Create Restaurant</button>
 
 
